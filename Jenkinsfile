@@ -11,6 +11,7 @@ pipeline {
                     steps {
                         sh './mvnw test -D testGroups=unit'
                     }
+		}
                  stage('Integration tests') {
                     when {
                         expression { return params.RUN_INTEGRATION_TESTS }
@@ -24,4 +25,4 @@ pipeline {
         }
     }
 }
-}
+
